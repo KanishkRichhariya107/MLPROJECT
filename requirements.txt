@@ -1,0 +1,6 @@
+pandas
+numpy
+seaborn
+
+#this -e . will automatically triger setup.py whenever we pip install requirements.txt. it will redirect it tp setup.py so that u dont have to install that setup.py alag se
+-e .
