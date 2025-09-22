@@ -1,6 +1,6 @@
 # whener anywhere anything haopends like exception takes plave sys knows about it
 import sys
-import logging
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
     #all the information like on which line exception has occured and on which file exception has occured all those info will be with this variable exc_tb
