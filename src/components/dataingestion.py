@@ -6,6 +6,9 @@ from src.exception import CustomException
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
 # this dataclass operator is used so that we dont have to use __innit or self types of things in class. it automatically uses them
 @dataclass
 class DataIngestionConfig:
@@ -42,6 +45,9 @@ class DataIngestion:
 if __name__=="__main__":
     obj=DataIngestion()
     train_data,test_data=obj.initiate_data_ingestion()
+
+    data_transformation=DataTransformation()
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
 
     
 # __main__ → DataIngestion.__init__() → DataIngestionConfig() → Back to __main__ →DataIngestion.initiate_data_ingestion() →
