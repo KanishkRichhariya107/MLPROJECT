@@ -9,6 +9,9 @@ from sklearn.model_selection import train_test_split
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
 # this dataclass operator is used so that we dont have to use __innit or self types of things in class. it automatically uses them
 @dataclass
 class DataIngestionConfig:
@@ -48,6 +51,9 @@ if __name__=="__main__":
 
     data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
     
 # __main__ → DataIngestion.__init__() → DataIngestionConfig() → Back to __main__ →DataIngestion.initiate_data_ingestion() →
